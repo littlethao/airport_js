@@ -7,6 +7,6 @@ describe('Plane', function (){
 });
 
   it("should be in flight by default", function(){
-    expect(plane.flying()).toEqual(true);
+    expect(plane.inFlight()).toEqual(true);
   });
 });
