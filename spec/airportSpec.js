@@ -1,12 +1,12 @@
 describe('Airport', function(){
-
   var airport;
   var plane;
 
 beforeEach(function(){
   airport = new Airport();
-  plane = jasmine.createSpyObj('plane', ['flying']);
+  plane = jasmine.createSpyObj('plane', ['landed']);
 
+  plane.landed(false);
 
 });
 
@@ -23,6 +23,6 @@ it("should take off a plane", function(){
 
 it("should confirm that the plane has landed", function(){
   airport.land(plane);
-  expect(plane.landed).toEqual(false);
+  expect(plane.landed).toHaveBeenCalledWith(airport);
 });
 });

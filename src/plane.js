@@ -1,11 +1,11 @@
 function Plane() {
-  this.flying = true;
+  this._flying = true;
 }
 
 Plane.prototype.inFlight = function(){
-  return this.flying;
+  return this._flying;
 };
-// 
-// Plane.prototype.landed = function(){
-//   return this._flying = false;
-// };
+
+Plane.prototype.landed = function(){
+  this._flying = false;
+};

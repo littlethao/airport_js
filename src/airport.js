@@ -1,15 +1,16 @@
 function Airport() {
-  this._planes = [];
+  this._hangar = [];
 }
 
 Airport.prototype.planes = function(){
-  return this._planes;
+  return this._hangar;
 };
 
 Airport.prototype.land = function (plane) {
-  this._planes.push(plane);
+  this._hangar.push(plane);
+  plane.landed(this);
 };
 
 Airport.prototype.take_off = function (plane) {
-  this._planes.pop(plane);
+  this._hangar.pop(plane);
 };
